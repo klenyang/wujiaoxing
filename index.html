@@ -1,65 +1,904 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		*{margin:0;padding:0;}
-		html,body{width:100%;height:100%;}
-		body{background:#ddd;}
-	</style>
+	<title>首页</title>
+	<meta charset = "utf-8"/>
 </head>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+
+
+
+</script>
 <body>
-	<canvas width="800" height="600"></canvas>
-	<script>
-	var arr=new Array();
-	var str={pX:'',pY:''};
-	function polygon(ctx,n,x,y,r,angle){
-		var angle=angle||0;           //angel顶点到圆心与Y轴正方向的夹角
-		var stepAngle=2*Math.PI/n;	  //正多边形均分角度
-		
-		ctx.moveTo(x+r*Math.sin(angle),y-r*Math.cos(angle)); //确定第一点位置
-		
-		for(var i=0;i<n;i++){
-			angle+=stepAngle;       //角度调整
-			str={pX:x+r*Math.sin(angle),pY:y-r*Math.cos(angle)};
-			arr[i*2]=str;
-		}
-		angle=Math.PI/n;   //重置角度
-		ctx.moveTo(x+r*3/8*Math.sin(angle),y-r*3/8*Math.cos(angle));
-		for(var i=0;i<n;i++){
-			angle+=stepAngle;       //角度调整
-			str={pX:x+r*3/8*Math.sin(angle),pY:y-r*3/8*Math.cos(angle)};
-			arr[2*i+1]=str;
-		}
-		for(var j=0;j<2*n;j++){
-			ctx.lineTo(arr[j].pX,arr[j].pY);
+<!--  web start -->
+	
+	<a class="refer" href="#"><img src="img/zixun.jpg"/></a>
+	<img class="goTop" src="img/top.jpg"/>
+	
+	<div class="startBox">
+		<div class="start changeOpacity">
+			<a class="start_1" href="#"><img src="img/veo_brand_1.png"/></a>
+			<a href="#"><img src="img/veo_brand_2.png"/></a>
+			<a href="#"><img src="img/veo_brand_3.png"/></a>
+			<a href="#"><img src="img/veo_brand_4.png"/></a>
+			<a href="#"><img src="img/veo_brand_5.png"/></a>
+		</div>
+	</div>
+<!--  web head -->
+	<div class="headBox">
+		<div class="head">
+			<span>欢迎来到邦购网，全场满159元包邮</span>
+			<a class="head_1" href="#">登录</a>
+			<ul class="login">
+				<li><span class="noborder-top"></span><a href="#">QQ帐户登录</a></li>
+				<li><a href="#">支付宝登录</a></li>
+				<li><a href="#">微信账户登录</a></li>
+			</ul>
+			<a href="#">注册</a>
+			<a class="mybg" href="#">我的邦购&nbsp;<span class="triangle-down"></span></a>
+			<ul class="myMessage">
+				<li><a href="#">我的订单</a></li>
+				<li><a href="#">我的积分</a></li>
+				<li><a href="#">我的地址</a></li>
+				<li><a href="#">收货地址</a></li>
+			</ul>
+			<a href="#">会员中心</a>
+			<a class="head_app" href="#">下载APP&nbsp;<span class="triangle-down"></span></a>
+			<div class="appCode">
+				<span class="noborder-top"></span><a href="#"><img src="img/mbshop_pic_mobile.png"/></a>
+			</div>
+			<a href="#">微博</a>
+			<a  class="weichat" href="#">微信</a>
+			<div class="weiCode">
+				<span class="noborder-top"></span><a href="#"><img src="img/mbshop_pic_erweima.jpg"/></a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- nav-->
+	<div class="navbox">
+		<div class="nav changeOpacity">
+			<h1><a href="#"><img src="img/mbshop_new_logo2.png"/></a></h1>
+			<p class="searchBox">
+				<input id="search" type="text" value="只为特别的你"/>
+				<button></button>
+			</p>
+			<p class="hotSearch">
+				<a href="#">连衣裙</a>|<a href="#">T恤</a>|<a href="#">短裤</a>|<a href="#">阿迪3折</a>|<a href="#" style="color:red;">GENANX</a>|<a href="#">南海T</a>
+			</p>
+			<p class="shoppingBag ">
+				<a href="#">
+					购物袋<b class="count" style="color:red;">0</b>件
+				</a>	
+			</p>
+			<h2 class="commodityList"><a href="#">商品分类</a></h2>
+			<p class="navSub">
+				<a href="#">首页</a>
+				<a href="#"><img src="img/sporthot.gif"/></a>
+				<a href="#">美妆馆</a>
+				<a href="#">热门品牌</a>
+				<a href="#">邦邦团</a>
+				<a href="#"><img src="img/xhzx.gif"/></a>
+				<a href="#"><img src="img/dm.gif"/></a>
+			</p>
+			<a  class="bgPhone" href="#"><img src="img/mobilegai.gif"/></a>
+		</div>
+	</div>
+	<div class="contentBox">
+		<div class="contentTop">
+			<ul class="contentLeft">
+				<li class="rightArrow">
+					<h3><a href="#">男装</a></h3>
+					<p><a style="color:red;" href="#">T恤</a><a href="#">衬衫</a><a href="#">休闲裤</a><a href="#">中短裤</a><a style="color:red;" href="#">夏新品</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">女装</a></h3>
+					<p><a style="color:red;" href="#">连衣裙衬衫</a><a href="#">牛仔裤</a><a style="color:red;" href="#">T恤</a><a style="color:red;" href="#">阔腿裤</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">儿童</a></h3>
+					<p><a style="color:red;" href="#">29元封顶</a><a href="#">童鞋</a><a href="#">童包</a><a style="color:red;" href="#">冬装3折</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">鞋履</a></h3>
+					<p><a href="#">阿迪</a><a href="#">凉鞋</a><a href="#">休闲鞋</a><a href="#">匡威</a><a style="color:red;" href="#">名将</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">箱包</a></h3>
+					<p><a style="color:red;" href="#">双肩包</a><a href="#">斜挎包</a><a href="#">钱包</a><a href="#">手提包</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">配饰</a></h3>
+					<p><a style="color:red;" href="#">腕表</a><a href="#">太阳镜</a><a href="#">腰带</a><a href="#">帽子耳饰</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">生活/内衣</a></h3>
+					<p><a href="#">四件套</a><a href="#">耳机</a><a href="#">雨伞</a><a href="#">内裤</a><a style="color:red;" href="#">MaxVis</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">美妆个护</a></h3>
+					<p><a style="color:red;" href="#">洗面奶</a><a href="#">香水</a><a href="#">爆款面膜</a><a href="#">防晒霜</a></p>
+				</li>
+				<li class="rightArrow">
+					<h3><a href="#">只为特别的你 </a></h3>
+					<p><a href="#">男装180/185/190</a><a href="#">女装170/175</a></p>
+				</li>
+			</ul>
+			
+			<div class="contentMiddle">
+				<div class="showImg changeOpacity ">
+					<a href="#" style="z-index:2"><img src="img/img1.jpg"/> </a>
+					<a href="#"><img src="img/img2.jpg"/> </a>
+					<a href="#"><img src="img/img3.jpg"/> </a>
+					<a href="#"><img src="img/img4.jpg"/> </a>
+					<a href="#"><img src="img/img5.jpg"/> </a>
+					<a href="#"><img src="img/img6.jpg"/> </a>
+					
+				<!--	
+					<a href="#" class="nextImg">&gt;</a>
+					<a href="#" class="prevImg">&lt;</a>
+					-->
+				</div>
+				<p class="picList">
+					<a href="#">断码零利</a>
+					<a href="#">反季热卖</a>
+					<a href="#">0.1秒没</a>
+					<a href="#">夏不为利</a>
+					<a href="#">劲爽底价</a>
+					<a class="nobg" href="#">童装2折封顶</a>
+				</p>
+			</div>
+			<div class="contentRight changeOpacity">
+				<a href="#"><img class="buy1_1" src="img/buy1_1.jpg"/></a>
+				<a href="#"><img class="buy1_2" src="img/buy1_2.jpg"/></a>
+				<p>仅剩:<span class="remainTime"></span></p>
+			</div>
+			<!--男装-->
+			<ul class="details ">
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">热门HOT</a></h3>
+						 <ul>
+							<li><a href="#">型男吸睛术</a></li>
+							<li><a href="#">专供款2件折上68折</a></li>
+							<li><a href="#">买魔兽T赠正版手办</a></li>
+							<li><a href="#">印花单品49元起</a></li>
+							<li><a href="#">美国队长火爆发售</a></li>
+							<li><a href="#">青云志合作款</a></li>
+							<li ><a class="fl" href="#">新品39元起</a><a class="fl" href="#">裤装满减</a></li>
+						</ul>
+						<h3><a href="#">上装TOPS</a></h3>
+						 <ul>
+							<li><a href="#">短袖T恤</a><a href="#">POLO</a></li>
+							<li><a class="fl" href="#">背心</a><a class="fl" href="#">长袖T恤</a><a class="fl" href="#">卫衣</a></li>
+							<li><a class="fl" href="#">西装</a><a class="fl" href="#">毛衣</a><a class="fl" href="#">夹克</a></li>
+							<li><a class="fl" href="#">短袖衬衫</a><a class="fl" href="#">长袖衬衫</a></li>
+						</ul>
+	
+						<h3><a href="#">下装PANTS</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">针织休闲裤</a><a class="fl" href="#">牛仔中裤</a></li>
+							<li><a class="fl" href="#">休闲中裤</a><a class="fl" href="#">针织中裤</a></li>
+							<li><a class="fl" href="#">牛仔长裤</a><a class="fl" href="#">休闲长裤</a></li>
+							<li><a class="fl" href="#">针织运动裤</a><a class="fl" href="#">西裤</a></li>
+							<li><a href="#">收口慢跑裤</a></li>
+							
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/ul1.jpg"/></a>
+						 <h3><a href="#">男装热门品牌</a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/ul_1_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_2_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_3_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_4_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_5_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_6_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_7_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_8_logo.png"/></a></li>
+						</ul>
+					</div> 
+				</li>
 
-		}
-		ctx.closePath();
+		<!--女装-->
 
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">热门HOT</a></h3>
+						 <ul>
+							<li><a href="#">夏日剁手清单</a></li>
+							<li><a href="#">印花单品66元起</a></li>
+							<li><a href="#">夏季新品39元起</a></li>
+							<li><a href="#">遇见夏日</a></li>
+						
+						</ul>
+						<h3><a href="#">上装TOPS</a></h3>
+						 <ul>
+							<li><a href="#">夹克</a><a href="#">风衣</a><a href="#">开衫</a></li>
+							<li><a class="fl" href="#">卫衣</a><a class="fl" href="#">大衣</a><a class="fl" href="#">毛衣</a></li>
+							<li><a class="fl" href="#">衬衫</a><a class="fl" href="#">T恤</a><a class="fl" href="#">皮衣</a></li>
+							<li><a class="fl" href="#">西装</a><a class="fl" href="#">马甲</a><a class="fl" href="#">羽绒服</a></li>
+						</ul>
+	
+						<h3><a href="#">下装PANTS</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">中短裤</a><a class="fl" href="#">牛仔裤</a></li>
+							<li><a class="fl" href="#">时装裤</a><a class="fl" href="#">运动裤</a></li>
+							<li><a class="fl" href="#">打底裤</a><a class="fl" href="#">阔腿裤</a></li>
+							<li><a class="fl" href="#">休闲裤</a><a class="fl" href="#">连身裙</a></li>
+							<li><a href="#">半身裙</a></li>
+							
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity ">
+						 <a href="#"><img src="img/ul2.jpg"/></a>
+						 <h3><a href="#">女装热门品牌 </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/ul_2_logo.png"/></a></li>
+							<li><a href="#"><img src="img/ul_1_logo.png"/></a></li>
+							<li><a href="#"><img src="img/mango.jpg"/></a></li>
+							<li><a href="#"><img src="img/ul_4_logo.png"/></a></li>
+							<li><a href="#"><img src="img/chuyu.jpg"/></a></li>
+							<li><a href="#"><img src="img/PUMA.jpg"/></a></li>
+							<li><a href="#"><img src="img/cheap-monday.png"/></a></li>
+							<li><a href="#"><img src="img/kamo.png"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				
+				<!--儿童-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">宝贝上装</a></h3>
+						 <ul>
+							<li><a  class="fl"href="#">短袖T恤</a><a  class="fl"href="#">短袖衬衫</a></li>
+							<li><a class="fl" href="#">长袖衬衫</a><a  class="fl"href="#">长袖T恤</a></li>
+							<li><a  class="fl"href="#">连衣裙</a><a  class="fl" href="#">卫衣</a><a class="fl" href="#">毛衣</a></li>
+							<li><a href="#">外套</a></li>
+						
+						</ul>
+						<h3><a href="#">宝贝下装</a></h3>
+						 <ul>
+							<li><a href="#">中短裤</a><a href="#">休闲裤</a></li>
+							<li><a class="fl" href="#">牛仔裤</a><a class="fl" href="#">打底裤</a></li>
+							<li><a class="fl" href="#">半身裙</a><a class="fl" href="#">针织裤</a><a class="fl" href="#">泳衣</a></li>
+							<li><a class="fl" href="#">婴童套装</a><a class="fl" href="#">童内衣</a></li>
+						</ul>
+						<h3><a href="#">宝贝鞋/包/配</a></h3>
+						 <ul>
+							
+							<li><a class="fl" href="#">鞋履</a><a class="fl" href="#">包包</a><a class="fl" href="#">配饰</a></li>
+						</ul>
+	
+						<h3><a href="#">限时活动</a></h3>
+						 <ul>
+							<li><a href="#">出游换新季 满 99-20</a></li>
+							<li><a href="#">199-50</a></li>
+							<li><a href="#">迪士尼系列 满99-20</a></li>
+							<li><a href="#"> 199-50</a></li>
+							<li><a href="#">夏季热卖</a></li>
+							<li><a href="#">春装清仓 5折封顶</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/syzc.jpg"/></a>
+						 <h3><a href="#">童装热门品牌  </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/sp1.jpg"/></a></li>
+							<li><a href="#"><img src="img/sp2.jpg"/></a></li>
+							<li><a href="#"><img src="img/sp3.jpg"/></a></li>
+							<li><a href="#"><img src="img/sp4.jpg"/></a></li>
+							<li><a href="#"><img src="img/sp5.png"/></a></li>
+							<li><a href="#"><img src="img/kaxilong.png"/></a></li>
+							<li><a href="#"><img src="img/nohoo0308.jpg"/></a></li>
+							<li><a href="#"><img src="img/sp8.jpg"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				
+				<!--鞋履-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">热门活动</a></h3>
+						 <ul>
+							<li><a  class="fl"href="#">小白鞋sale</a></li>
+							<li><a class="fl" href="#">匡威199元起</a></li>
+							<li><a  class="fl"href="#">adidas低至3折</a></li>
+							<li><a href="#">nike直降</a></li>
+						
+						</ul>
+						<h3><a href="#">品质男鞋</a></h3>
+						 <ul>
+							<li><a href="#">休闲鞋</a><a href="#">运动鞋</a></li>
+							<li><a class="fl" href="#">商务鞋</a><a class="fl" href="#">时装鞋</a></li>
+							<li><a class="fl" href="#">帆布鞋</a><a class="fl" href="#">跑步鞋</a></li>
+							<li><a class="fl" href="#">篮球鞋</a></li>
+						</ul>
+						<h3><a href="#">人气女鞋</a></h3>
+						<ul>
+							<li><a class="fl" href="#">帆布鞋</a><a class="fl" href="#">休闲鞋</a></li>
+							<li><a class="fl" href="#">运动鞋</a><a class="fl" href="#">潮靴</a><a class="fl" href="#">雨鞋</a></li>
+							<li><a class="fl" href="#">文艺单鞋</a><a class="fl" href="#">时装鞋</a></li>
+						</ul>
+	
+						<h3><a href="#">热卖中性</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">小白鞋</a><a class="fl" href="#">滑板鞋</a></li>
+							<li><a class="fl" href="#">德比鞋</a><a class="fl" href="#">一脚蹬</a></li>
+							<li><a class="fl" href="#">工装鞋</a><a class="fl" href="#">网面鞋</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/D1.png"/></a>
+						 <h3><a href="#">鞋热门品牌   </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/ADIDAS ORIGINALS.jpg"/></a></li>
+							<li><a href="#"><img src="img/Pony.jpg"/></a></li>
+							<li><a href="#"><img src="img/PUMA.jpg"/></a></li>
+							<li><a href="#"><img src="img/4.jpg"/></a></li>
+							<li><a href="#"><img src="img/nike.jpg"/></a></li>
+							<li><a href="#"><img src="img/onitsuka-tiger.jpg"/></a></li>
+							<li><a href="#"><img src="img/5.jpg"/></a></li>
+							<li><a href="#"><img src="img/6.jpg"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				<!--箱包-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">品质男包</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">双肩包</a><a class="fl" href="#">斜挎包</a></li>
+							<li><a class="fl" href="#">钱包/卡包</a><a class="fl" href="#">胸包</a></li>
+							<li><a class="fl" href="#">手提手拿包</a><a class="fl" href="#">单肩包</a></li>
+							<li><a class="fl" href="#">腰包</a><a class="fl" href="#">真皮包</a></li>
+						
+						</ul>
+						<h3><a href="#">潮流女包</a></h3>
+						 <ul>
+							<li><a href="#">双肩包</a><a href="#">手提手拿包</a></li>
+							<li><a class="fl" href="#">斜挎包</a><a class="fl" href="#">单肩包</a></li>
+							<li><a class="fl" href="#">钱包/卡包</a><a class="fl" href="#">拉杆箱</a></li>
+							<li><a class="fl" href="#">化妆包</a><a class="fl" href="#">真皮包</a></li>
+						</ul>
+						<h3><a href="#">百搭中性包</a></h3>
+						<ul>
+							<li><a class="fl" href="#">帆布包</a><a class="fl" href="#">钱包/卡包</a></li>
+							<li><a class="fl" href="#">斜挎包</a><a class="fl" href="#">手拿包</a><a class="fl" href="#">腰包</a></li>
+							<li><a class="fl" href="#">拉杆箱/包</a><a class="fl" href="#">单肩包</a></li>
+							<li><a class="fl" href="#">手提包</a><a class="fl" href="#">胸包</a></li>
+							<li><a class="fl" href="#">钥匙零钱包</a><a class="fl" href="#">真皮包</a></li>
+						</ul>
+	
+						<h3><a href="#">热门活动</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">新品上架1折起</a></li>
+							<li><a class="fl" href="#">斜挎包6折封顶</a></li>
+							<li><a class="fl" href="#">vinhas买一赠一</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/bao.jpg"/></a>
+						 <h3><a href="#">箱包热门品牌</a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/bao1.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao2.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao3.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao4.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao5.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao6.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao7.jpg"/></a></li>
+							<li><a href="#"><img src="img/bao8.jpg"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				<!--配饰-->
+
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">服配</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">围巾</a><a class="fl" href="#">腰带</a><a class="fl" href="#">帽子</a></li>
+							<li><a class="fl" href="#">手套</a><a class="fl" href="#">眼镜/太阳镜</a></li>
+							<li><a class="fl" href="#">腕表</a><a class="fl" href="#">领带/领结</a></li>
+							
+						
+						</ul>
+						<h3><a href="#">小饰品</a></h3>
+						 <ul>
+							<li><a href="#">耳饰</a><a href="#">手链/手镯</a></li>
+							<li><a class="fl" href="#">吊坠/项链</a><a class="fl" href="#">戒指</a></li>
+							<li><a class="fl" href="#">发箍/发饰 </a></li>
+						</ul>
+						<h3><a href="#">热门活动</a></h3>
+						<ul>
+							<li><a class="fl" href="#">小配饰100元封顶</a></li>
+							<li><a class="fl" href="#">初夏新品5折起</a></li>
+							<li><a class="fl" href="#">太阳镜39元起</a></li>
+						
+						</ul>
+	
+						<h3><a href="#">热门活动</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">新品上架1折起</a></li>
+							<li><a class="fl" href="#">斜挎包6折封顶</a></li>
+							<li><a class="fl" href="#">vinhas买一赠一</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/peishi.jpg"/></a>
+						 <h3><a href="#">配饰热门品牌 </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/peishi1.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi2.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi3.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi4.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi5.png"/></a></li>
+							<li><a href="#"><img src="img/peishi6.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi7.jpg"/></a></li>
+							<li><a href="#"><img src="img/peishi8.png"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				
+				<!--生活内衣-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">居家纺织</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">床上纺织品</a></li>
+							<li><a class="fl" href="#">枕芯/被芯</a><a class="fl" href="#">毛巾/浴巾</a></li>
+							<li><a class="fl" href="#">披毯</a></li>
+						</ul>
+						<h3><a href="#">手机数码</a></h3>
+						 <ul>
+							<li><a href="#">耳机/耳麦</a><a href="#">移动电源</a></li>
+							<li><a class="fl" href="#">手机壳</a><a class="fl" href="#">数据线</a></li>
+						</ul>
+						<h3><a href="#">厨房餐饮</a></h3>
+						<ul>
+							<li><a class="fl" href="#">保温杯</a><a class="fl" href="#">随行杯</a></li>
+							<li><a class="fl" href="#">马克杯</a></li>
+						</ul>
+						<h3><a href="#">居家日用</a></h3>
+						<ul>
+							<li><a class="fl" href="#">家居鞋/拖鞋</a><a class="fl" href="#">伞/雨披</a></li>
+							<li><a class="fl" href="#">收纳用品 </a></li>
+						</ul>
+	
+						<h3><a href="#">内衣</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">内衣上装</a><a class="fl" href="#">内衣下装</a></li>
+							<li><a class="fl" href="#">家居套装</a><a class="fl" href="#">文胸</a><a class="fl" href="#">袜子</a></li>
+						</ul>
+						<h3><a href="#">热门活动</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">袜子3双21元</a></li>
+							<li><a class="fl" href="#">袜子3双29元</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/shenghuo.jpg"/></a>
+						 <h3><a href="#">生活热门品牌  </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/shenghuo1.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo2.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo3.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo4.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo5.jpg"/></a></li>
+							<li><a href="#"><img src="img/shenghuo6.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo7.png"/></a></li>
+							<li><a href="#"><img src="img/shenghuo8.jpg"/></a></li>
+						</ul>
+					</div> 
+				</li>
+				<!--美妆个护-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">面部护理</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">洁面</a><a class="fl" href="#">面膜</a><a class="fl" href="#">化妆水</a></li>
+							<li><a class="fl" href="#">精华</a><a class="fl" href="#">眼部护理</a></li>
+							<li><a class="fl" href="#">唇部护理</a><a class="fl" href="#">乳液/面霜</a></li>
+							<li><a class="fl" href="#">护肤工具</a></li>
+						</ul>
+						<h3><a href="#">洗护/美发</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">洗发护发</a><a class="fl" href="#">沐浴</a></li>
+							<li><a class="fl" href="#">手足护理</a><a class="fl" href="#">身体护理</a></li>
+							<li><a class="fl" href="#">美发造型</a></li>
+						</ul>
+						<h3><a href="#">彩妆/工具</a></h3>
+						<ul>
+							<li><a class="fl" href="#">卸妆</a><a class="fl" href="#">美甲</a><a class="fl" href="#">隔离防晒</a></li>
+							<li><a class="fl" href="#">彩妆工具</a><a class="fl" href="#">彩绘</a><a class="fl" href="#">唇部</a></li>
+							<li><a class="fl" href="#">腮红</a><a class="fl" href="#">眼部</a><a class="fl" href="#">底妆</a></li>
+						</ul>
+						<h3><a href="#">香水香氛</a></h3>
+						<ul>
+							<li><a class="fl" href="#">固体香水</a><a class="fl" href="#">香水</a></li>
+						</ul>
+						<h3><a href="#">套装</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">礼盒</a><a class="fl" href="#">优惠套装</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity">
+						 <a href="#"><img src="img/meizhuang.jpg"/></a>
+						 <h3><a href="#">美妆热门品牌   </a></h3>
+						 <ul>
+							<li><a href="#"><img src="img/meizhuang1.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang2.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang3.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang4.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang5.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang6.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang7.jpg"/></a></li>
+							<li><a href="#"><img src="img/meizhuang8.jpg"/></a></li>
+						</ul>
+					</div> 
+				</li>
+			<!--只为特别的你-->
+				<li>
+					<div class="detailsLeft">
+						<h3><a href="#">男装</a></h3>
+						<ul>
+							<li><a class="fl" href="#">180/185/190 </a></li>
+						</ul>
+						<h3><a href="#">女装</a></h3>
+						 <ul>
+							<li><a class="fl" href="#"> 170/175</a></li>
+						</ul>
+						<h3><a href="#">活动预告</a></h3>
+						 <ul>
+							<li><a class="fl" href="#">周一—女装150/155</a></li>
+							<li><a class="fl" href="#">男装160/165</a></li>
+							<li><a class="fl" href="#">周二—女装160/165</a></li>
+							<li><a class="fl" href="#">男装170/175</a></li>
+							<li><a class="fl" href="#">周四—女装170/175</a></li>
+							<li><a class="fl" href="#">男装180/185/190</a></li>
+							<li><a class="fl" href="#">周五—童装 鞋包配</a></li>
+							<li><a class="fl" href="#">周末—成人鞋包配</a></li>
+						</ul>
+					</div> 
+					<div class="detailsRight changeOpacity" style="position:relative;">
+						 <a class="yourTop" href="#"></a>
+						 <a class="yourLeft" href="#"></a>
+						 <a class="yourRight" href="#"></a>
+						 <img src="img/siru.jpg"/>
+						 
+					</div> 
+				</li>
+			</ul>
+		</div>
 		
+		<div class="sale changeOpacity">
+			<ul>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/OQL.png"/></dt>
+						<dd class="logoShow"><img src="img/OQLLOGO.jpg"/></dd>
+						<dd class="logoText">设计在传统服装品牌中独辟蹊径开创了主流时尚模式,成为具有影响力的时尚代表。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/remenconverse.png"/></dt>
+						<dd class="logoShow"><img src="img/remen-logo-converse.jpg"/></dd>
+						<dd class="logoText">集复古、流行、环保于一身的ALL STAR帆布鞋，成为追求自我时尚的青年人的忠实排挡。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/fuhaogongshe1.png"/></dt>
+						<dd class="logoShow"><img src="img/logo-fuhaogongshe1.jpg"/></dd>
+						<dd class="logoText">符号公社基于时尚冷静的探索及思维延展后的精神表达，更是年轻一代玩酷和不羁的自由代表。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/THE-2ND-LAW.png"/></dt>
+						<dd class="logoShow"><img src="img/logo-THE-2ND-LAW.jpg"/></dd>
+						<dd class="logoText">“THE 2ND LAW”,直译为第二定律或第二法则，强调年轻人挣脱桎梏，追求个性突破现有圈子的潮流品位。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/brandAD.png"/></dt>
+						<dd class="logoShow"><img src="img/brandlogo.jpg"/></dd>
+						<dd class="logoText">阿迪达斯（adidas）是德国运动用品制造商，阿迪达斯AG的成员公司。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/hans.jpg"/></dt>
+						<dd class="logoShow"><img src="img/kanslogo2.jpg"/></dd>
+						<dd class="logoText">韩束的个性，一如新中国都会新女性，积极进取，时刻充满充满热情与能量。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/mige.png"/></dt>
+						<dd class="logoShow"><img src="img/logo-mige.jpg"/></dd>
+						<dd class="logoText">独立设计女装品牌，提供简约帅酷的着装方案，行走都市，每一次的告别和出发，演绎自我的style宣言。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/stage.png"/></dt>
+						<dd class="logoShow"><img src="img/logo-stage.jpg"/></dd>
+						<dd class="logoText">品牌坚持「Trend equal to zero (nothing)，STAGE equal YOU潮流等於零，STAGE等於你」。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/remen-puma-.png"/></dt>
+						<dd class="logoShow"><img src="img/remenlogo-puma.jpg"/></dd>
+						<dd class="logoText">彪马 (Puma) 的鞋与服饰在嘻哈涂鸦文化中受到全球各地年轻人的极度欢迎。</dd>
+					</dl>
+			</a></li>
+			<li><a href="#">
+					<dl>
+						<dt><img src="img/Apony.png"/></dt>
+						<dd class="logoShow"><img src="img/Alogopony.jpg"/></dd>
+						<dd class="logoText">Pony玩转高级时尚及街头潮流的对撞，让竞技与街头运动的能量注入产品中.</dd>
+					</dl>
+			</a></li>
+			
+			</ul>
+			<div class="prevBtn"><img src="img/rec_btn_lt.png"></div>
+			<div class="nextBtn"><img src="img/rec_btn_rt.png"></div>
+		</div>
 		
-	}
-		var c=document.querySelector('canvas')
-		ctx=c.getContext('2d');
-		ctx.beginPath();
-		ctx.strokeStyle='#000';
-		ctx.fillStyle='#fcb2b4';
-		polygon(ctx,3,70,60,40);
-		polygon(ctx,4,170,60,40);
-		polygon(ctx,5,270,60,40);
-		polygon(ctx,6,370,60,40);
-		polygon(ctx,7,70,160,40);
-		polygon(ctx,8,170,160,40);
-		polygon(ctx,9,270,160,40);
-		polygon(ctx,10,370,160,40);
-		
-		
-		
-		ctx.fill();
-		ctx.stroke();
-	</script>
+		<!--男装馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">男装馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/men.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#" style="color:red">文字T</a></li>    
+						<li><a href="#">休闲长裤</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#">短袖T恤</a></li>    
+						<li><a href="#">牛仔中裤</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/metersbonwe160-45.png"/></a>
+					<a href="#"><img src="img/fhgs.jpg"/></a>
+					<a href="#"><img src="img/160-45STAGE.png"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/DUANAM706-WM.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/477-236-holiday.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/n-1.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/n-2.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/n-3.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/n-4.png"/></a>
+		</div>
+		<!--女装馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">女装馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/nvzhuanguan619.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#" style="color:red">潮流T恤</a></li>    
+						<li><a href="#">品质衬衫</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#">穿衣指南</a></li>    
+						<li><a href="#">棉麻系列</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/160450000.jpg"/></a>
+					<a href="#"><img src="img/symango.jpg"/></a>
+					<a href="#"><img src="img/cheap-logo0911.jpg"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/DM0706-001.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/sy-summer.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/womanSL8.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/womanSL6.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/womanSL5.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/womanSL7.jpg"/></a>
+		</div>
+		<!--儿童馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">儿童馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/B1_.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#">童鞋</a></li>    
+						<li><a href="#">童包</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#" style="color:red">3件75折</a></li>    
+						<li><a href="#" style="color:red">80%OFF</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/me&city.jpg"/></a>
+					<a href="#"><img src="img/moomoo.jpg"/></a>
+					<a href="#"><img src="img/minimoomoo.png"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/236-477713.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/477-236713.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/236-236-3713.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/236-236-2713.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/236-236-1713.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/236-236-4713.jpg"/></a>
+		</div>
+		<!--鞋履馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">鞋履馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/ASL1.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#">pony</a></li>    
+						<li><a href="#">puma</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#" style="color:red">帆布鞋</a></li>    
+						<li><a href="#">运动鞋</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/160x45-n.jpg"/></a>
+					<a href="#"><img src="img/160x45-Adidas.jpg"/></a>
+					<a href="#"><img src="img/160x45-converse.jpg"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/Asl2_01.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/Asl2_03.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/Asl2_05.jpg"/></a>
+			<a href="#" class="fl"><img src="img/Asl2_07.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/Asl2_09.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/Asl2_11.jpg"/></a>
+		</div>
+		<!--箱包馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">箱包馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/xiangbaoguan619.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#">斜挎包</a></li>    
+						<li><a href="#">双肩包</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#" style="color:red"> 腰带/皮带</a></li>    
+						<li><a href="#">眼镜/太阳镜</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/Avinhas.jpg"/></a>
+					<a href="#"><img src="img/AFIYTA.jpg"/></a>
+					<a href="#"><img src="img/crazy.jpg"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/BPsl2_01.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/BPsl2_03.jpg"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/BPsl2_05.jpg"/></a>
+			<a href="#" class="fl"><img src="img/BPsl2_07.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/BPsl2_09.jpg"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/BPsl2_11.jpg"/></a>
+		</div>
+		<!--生活馆-->
+		<div class="showRoom changeOpacity">
+			<h3><a href="#">生活馆</a></h3>
+			<dl class="fl changeOpacity">
+				<dt><a href="#"><img src="img/0623_17.jpg"/></a></dt>
+				<dd class="roomNav">
+					<ul class="wordLeft fl">
+						<li><a href="#" style="color:red">美妆馆</a></li>    
+						<li><a href="#">防晒霜</a></li>
+					</ul>
+					<ul class="wordRight fr">
+						<li><a href="#" style="color:red">内衣</a></li>    
+						<li><a href="#">恒温杯</a></li>
+					</ul>
+				</dd>
+				<dd class="roomLogo">
+					<a href="#"><img src="img/pengyun.png"/></a>
+					<a href="#"><img src="img/MAXVIS.jpg"/></a>
+					<a href="#"><img src="img/ampm.png"/></a>
+				</dd>
+			</dl>
+			<a href="#" class="fl"><img src="img/s7.14_01.png"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/s7.14_03.png"/></a>
+			<a href="#" class="fl spaceLeft" style="margin-bottom:2px"><img src="img/s7.14_05.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/s7.14_08.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/s7.14_10.png"/></a>
+			<a href="#" class="fl spaceLeft"><img src="img/s7.14_11.png"/></a>
+		</div>
+	</div>
+	<!--commonFoot-->
+	<div class="footBorder">
+		<ul class="attention changeOpacity">
+			<li><a href="#"><img src="img/zyshare01.png"/></a></li>
+			<li><a href="#"><img src="img/zyshare02.png"/></a></li>
+			<li><a href="#"><img src="img/zyshare03.png"/></a></li>
+			<li style="width:359px;">
+				<a href="#" class="fl" style="border-bottom:1px solid #dcdcdc;"><img style="display:block;" src="img/060819.jpg"/></a>
+				<dl>
+					<dt><a href="#"><img src="img/indexonline.png"/></a></dt>
+					<dd><a href="#">在线客服</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="#"><img src="img/indexopinion.png"/></a></dt>
+					<dd><a href="#">意见反馈</a></dd>
+				</dl>
+				<dl style="border:none;">
+					<dt><a href="#"><img src="img/indexsurvey.png"/></a></dt>
+					<dd><a href="#">问卷调查</a></dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<div class="footBox">
+		<div class="foot">
+			<p><span>新手指南</span><span>购物指南</span><span>配送方式</span><span>支付方式</span><span>售后服务</span><span>联系方式</span></p>
+			<ul>
+				<li><a href="#">注册新用户</a></li>
+				<li><a href="#">用户协议</a></li>
+				<li><a href="#">找回密码</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">红包使用说明</a></li>
+				<li><a href="#">购物流程</a></li>
+				<li><a href="#">订单状态</a></li>
+				<li><a href="#">邦购币绑定与使用</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">配送范围</a></li>
+				<li><a href="#">订单拆分</a></li>
+				<li><a href="#">商品验货与签收</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">发票制度</a></li>
+				<li><a href="#">支付方式</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">退换货政策</a></li>
+				<li><a href="#">退换办理流程</a></li>
+				<li><a href="#">退款说明</a></li>
+			</ul>
+			<ul>
+				<li>客服：400 821 9988</li>
+				<li>监督：021-38119999-6038</li>
+				<li><a href="#">在线客服</a></li>
+				<li><a href="#">用户调研</a></li>
+			</ul>
+			
+		</div>
+		<div class="copyright changeOpacity">
+				<p>CopyRight © 2000-2016, 版权所有 上海美特斯邦威服饰股份有限公司 banggo.com 沪ICP备05033127号</p>
+				<a href="#" style="margin-left:406px;"><img src="img/lz_beian_h40.png"/></a>
+				<a href="#"><img src="img/lz_shgs_h40.png"/></a>
+				<a href="#"><img src="img/lz_szfw_h40.png"/></a>
+		</div>
+	</div>
 	
 </body>
 </html>
+
+
+
+
