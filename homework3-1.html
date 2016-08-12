@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		html,body{width:100%;height:100%;}
+		body{background:#ddd;}
+	</style>
+</head>
+<body>
+	<canvas width="800" height="600"></canvas>
+	<script>
+	var arr=new Array();
+	var str={pX:'',pY:''};
+	function polygon(ctx,n,x,y,r,angle){
+		var angle=angle||0;           //angel顶点到圆心与Y轴正方向的夹角
+		var stepAngle=2*Math.PI/n;	  //正多边形均分角度
+		
+		ctx.moveTo(x+r*Math.sin(angle),y-r*Math.cos(angle)); //确定第一点位置
+		
+		for(var i=0;i<n;i++){
+			angle+=stepAngle;       //角度调整
+			str={pX:x+r*Math.sin(angle),pY:y-r*Math.cos(angle)};
+			arr[i*2]=str;
+		}
+		angle=Math.PI/n;   //重置角度
+		ctx.moveTo(x+r*3/8*Math.sin(angle),y-r*3/8*Math.cos(angle));
+		for(var i=0;i<n;i++){
+			angle+=stepAngle;       //角度调整
+			str={pX:x+r*3/8*Math.sin(angle),pY:y-r*3/8*Math.cos(angle)};
+			arr[2*i+1]=str;
+		}
+		for(var j=0;j<2*n;j++){
+			ctx.lineTo(arr[j].pX,arr[j].pY);
+
+		}
+		ctx.closePath();
+
+		
+		
+	}
+		var c=document.querySelector('canvas')
+		ctx=c.getContext('2d');
+		ctx.beginPath();
+		ctx.strokeStyle='#000';
+		ctx.fillStyle='#fcb2b4';
+		polygon(ctx,3,70,60,40);
+		polygon(ctx,4,170,60,40);
+		polygon(ctx,5,270,60,40);
+		polygon(ctx,6,370,60,40);
+		polygon(ctx,7,70,160,40);
+		polygon(ctx,8,170,160,40);
+		polygon(ctx,9,270,160,40);
+		polygon(ctx,10,370,160,40);
+		
+		
+		
+		ctx.fill();
+		ctx.stroke();
+	</script>
+	
+</body>
+</html>
